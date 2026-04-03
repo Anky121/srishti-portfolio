@@ -813,6 +813,35 @@ ul { list-style: none; }
   color: var(--clr-accent);
 }
 
+a.project-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.project-view-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: var(--space-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--clr-accent);
+  transition: all var(--transition-fast);
+}
+
+.project-view-link svg {
+  transition: transform var(--transition-fast);
+}
+
+.project-card:hover .project-view-link {
+  color: var(--clr-accent-light);
+}
+
+.project-card:hover .project-view-link svg {
+  transform: translateX(4px);
+}
+
 /* ==============================
    EDUCATION / TIMELINE
    ============================== */
