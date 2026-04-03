@@ -671,6 +671,12 @@ ul { list-style: none; }
   transition: color var(--transition-fast);
 }
 
+.skill-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .skill-card:hover .skill-icon {
   color: var(--clr-text);
 }
@@ -894,66 +900,143 @@ ul { list-style: none; }
 
 
 /* ==============================
+   STRENGTHS
+   ============================== */
+.strengths {
+  background: var(--clr-bg-alt);
+}
+
+.strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+.strength-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  transition: all var(--transition-med);
+}
+
+.strength-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+.strength-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto var(--space-sm);
+  color: var(--clr-accent-light);
+  transition: color var(--transition-fast);
+}
+
+.strength-card:hover .strength-icon {
+  color: var(--clr-accent);
+}
+
+.strength-title {
+  font-family: var(--ff-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--clr-text);
+}
+
+.strength-desc {
+  font-size: 0.88rem;
+  color: var(--clr-text-muted);
+  line-height: 1.6;
+}
+
+/* ==============================
    CONTACT
    ============================== */
 .contact {
   background: var(--clr-bg);
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-  max-width: 820px;
-  margin: 0 auto;
+.section-title-line {
+  width: 40px;
+  height: 3px;
+  background: var(--gradient-accent);
+  margin-top: 0.6rem;
+  border-radius: 2px;
 }
 
-.contact-card {
+.contact-subtitle {
+  font-size: 1rem;
+  color: var(--clr-text-muted);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-form {
+  max-width: 700px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.6rem;
-  padding: var(--space-lg) var(--space-md);
-  background: var(--clr-surface);
+  gap: var(--space-md);
+}
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.contact-input {
+  background: transparent;
   border: 1px solid var(--clr-border);
-  border-radius: var(--border-radius-lg);
-  transition: all var(--transition-med);
-  cursor: default;
-}
-
-a.contact-card { cursor: pointer; }
-
-.contact-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(59, 130, 246, 0.1);
-  border-color: rgba(59, 130, 246, 0.25);
-}
-
-.contact-icon {
-  width: 44px;
-  height: 44px;
-  color: var(--clr-accent-dark);
-  transition: color var(--transition-fast), transform var(--transition-fast);
-}
-
-.contact-card:hover .contact-icon {
+  border-radius: 4px;
+  padding: 0.9rem 1rem;
+  font-family: var(--ff-body);
+  font-size: 0.9rem;
   color: var(--clr-text);
-  transform: scale(1.1);
+  transition: border-color var(--transition-fast);
+  outline: none;
+  width: 100%;
 }
 
-.contact-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+.contact-input::placeholder {
   color: var(--clr-text-light);
 }
 
-.contact-value {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--clr-text);
+.contact-input:focus {
+  border-color: var(--clr-accent);
+}
+
+.contact-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-submit-btn {
+  background: transparent;
+  color: var(--clr-accent);
+  border: 1px solid var(--clr-accent);
+  padding: 0.85rem 2rem;
+  font-family: var(--ff-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-med);
+  border-radius: 4px;
+}
+
+.contact-submit-btn:hover {
+  background: var(--clr-accent);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
 }
 
 /* ==============================
@@ -974,6 +1057,23 @@ a.contact-card { cursor: pointer; }
 
 .footer-text {
   font-size: 0.85rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.footer-social-link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--clr-accent);
+  transition: color var(--transition-fast);
+}
+
+.footer-social-link:hover {
+  color: var(--clr-accent-light);
 }
 
 .footer-top {
@@ -1009,6 +1109,9 @@ a.contact-card { cursor: pointer; }
   }
   .skills-cards--soft {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .strengths-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1093,9 +1196,24 @@ a.contact-card { cursor: pointer; }
   }
 
   /* Contact */
-  .contact-grid {
+  .contact-form-row {
     grid-template-columns: 1fr;
-    max-width: 380px;
+  }
+
+  .strengths-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+
+  .footer-socials {
+    gap: var(--space-md);
   }
 }
 
